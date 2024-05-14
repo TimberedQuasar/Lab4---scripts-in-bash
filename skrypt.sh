@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Parse command line arguments
 while [[ $# -gt 0 ]]
 do
   key="$1"
@@ -10,7 +9,7 @@ do
     #show date --date
     today=$(date +"%d-%m-%Y")
     echo "Today's date: $today"
-    shift # past argument
+    shift
     ;;
     --logs)
     #--logs wil create 100 files named "logx.txt" where x=number
@@ -21,7 +20,7 @@ do
         file_name="log${file_number}.txt"
         echo "$file_name created by $(basename "$0")" > "$file_name"
       done
-      shift # past argument
+      shift
     else
       # argument is not a number
       echo "Creating 100 log files..."
@@ -30,7 +29,7 @@ do
         echo "$file_name created by $(basename "$0")" > "$file_name"
       done
     fi
-    shift # past argument
+    shift
     ;;
     --help)
     #--help for showing available options
